@@ -1,0 +1,24 @@
+---
+output: github_document
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# jeroha
+
+`jeroha` is a research compendium for text analysis of works of Jeff Leek, Roger D. Peng and Hadley Wickham.
+
+## Installation
+
+You can install jeroha from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("echasnovski/jeroha")
+```

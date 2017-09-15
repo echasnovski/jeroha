@@ -1,0 +1,14 @@
+Package: jeroha
+Title: Jeff-Roger-Hadley text analysis
+Version: 0.0.0.9000
+Authors@R: person("Evgeni", "Chasnovski", email = "evgeni.chasnovski@gmail.com",
+    role = c("aut", "cre"))
+Description: Text analysis of works of Jeff Leek, Roger D. Peng and Hadley
+    Wickham.
+Depends: R (>= 3.4.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/echasnovski/jeroha
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.0.1
