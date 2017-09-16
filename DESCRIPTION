@@ -12,3 +12,9 @@ LazyData: true
 URL: https://github.com/echasnovski/jeroha
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
+Imports: pdftools,
+    dplyr,
+    tidytext,
+    stringr
+Suggests: testthat,
+    devtools
