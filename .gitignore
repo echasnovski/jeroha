@@ -2,3 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
+data-raw/EDAS.pdf
+data-raw/ADS.pdf
+data-raw/r4ds
