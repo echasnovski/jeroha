@@ -15,6 +15,9 @@ RoxygenNote: 6.0.1
 Imports: pdftools,
     dplyr,
     tidytext,
-    stringr
+    stringr,
+    tidyr,
+    tokenizers,
+    rlang
 Suggests: testthat,
     devtools
