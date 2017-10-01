@@ -93,36 +93,13 @@ file_base_name <- function(file) {
 #' for analysis, which are:
 #' - 'Stop words'. The list of them is taken from
 #'   [tidytext][tidytext::stop_words] version 0.1.3.
-#' - Words containing not alphabetical characters. If `use_punct` is `TRUE` then
-#'   punctuation is also allowed.
+#' - Words containing not alphabetical characters.
 #'
 #' @param word_tbl Data frame with column 'word'.
-#' @param use_punct Whether to treat punctuation in words as 'bad' for analysis.
 #'
 #' @export
-filter_good_words <- function(word_tbl, use_punct = FALSE) {
-  if (use_punct) {
-    good_chr_pattern <- "^[[:alpha:][:punct:]]+$"
-  } else {
-    good_chr_pattern <- "^[[:alpha:]]+$"
-  }
-
+filter_good_words <- function(word_tbl) {
   word_tbl %>%
     dplyr::anti_join(jeroha_stop_words, by = "word") %>%
-    dplyr::filter(stringr::str_detect(word, pattern = good_chr_pattern))
-}
-
-#' Extract alphabetical characters
-#'
-#' Extract all alphabetical characters from string.
-#'
-#' @param x Vector of strings.
-#'
-#' @examples
-#' # "\n" is treated as one symbol
-#' extract_alpha(c("\nword", "\\word", " word", "1word2"))
-#'
-#' @export
-extract_alpha <- function(x) {
-  str_replace_all(x, "[^[:alpha:]]", "")
+    dplyr::filter(stringr::str_detect(word, pattern = "^[[:alpha:]]+$"))
 }

@@ -9,7 +9,6 @@ prepare_book <- function(book_name) {
     filter_good_words() %>%
     mutate(
       id = 1:n(),
-      word = extract_alpha(word),
       book = rep(book_name, n())
     ) %>%
     select(id, book, everything())

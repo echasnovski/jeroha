@@ -4,12 +4,10 @@
 \alias{filter_good_words}
 \title{Filter good words}
 \usage{
-filter_good_words(word_tbl, use_punct = FALSE)
+filter_good_words(word_tbl)
 }
 \arguments{
 \item{word_tbl}{Data frame with column 'word'.}
-
-\item{use_punct}{Whether to treat punctuation in words as 'bad' for analysis.}
 }
 \description{
 Remove from word table (data frame with 'word' column) rows with words 'bad'
@@ -17,7 +15,6 @@ for analysis, which are:
 \itemize{
 \item 'Stop words'. The list of them is taken from
 \link[tidytext:stop_words]{tidytext} version 0.1.3.
-\item Words containing not alphabetical characters. If \code{use_punct} is \code{TRUE} then
-punctuation is also allowed.
+\item Words containing not alphabetical characters.
 }
 }

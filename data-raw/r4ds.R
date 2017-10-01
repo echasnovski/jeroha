@@ -33,7 +33,6 @@ r4ds <- file.path("data-raw", "r4ds", r4ds_pages[["file"]]) %>%
   filter_good_words() %>%
   mutate(
     id = 1:n(),
-    word = extract_alpha(word),
     book = rep("R4DS", n())
   ) %>%
   left_join(y = r4ds_pages %>% select(page, pageName),
