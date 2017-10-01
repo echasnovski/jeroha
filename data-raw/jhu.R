@@ -8,7 +8,7 @@ prepare_book <- function(book_name) {
     tidy_pdf() %>%
     filter_good_words() %>%
     mutate(
-      id = 1:n(),
+      id = seq_len(n()),
       book = rep(book_name, n())
     ) %>%
     select(id, book, everything())

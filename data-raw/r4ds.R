@@ -19,7 +19,7 @@ r4ds_file_names <- readLines(
   `[[`(1)
 
 r4ds_pages <- tibble(
-  page = 1:length(r4ds_file_names),
+  page = seq_len(length(r4ds_file_names)),
   file = r4ds_file_names,
   pageName = file_base_name(r4ds_file_names)
 )
@@ -32,7 +32,7 @@ r4ds <- file.path("data-raw", "r4ds", r4ds_pages[["file"]]) %>%
   rename(pageName = name) %>%
   filter_good_words() %>%
   mutate(
-    id = 1:n(),
+    id = seq_len(n()),
     book = rep("R4DS", n())
   ) %>%
   left_join(y = r4ds_pages %>% select(page, pageName),
