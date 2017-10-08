@@ -1,6 +1,6 @@
 Package: jeroha
 Title: Jeff-Roger-Hadley text analysis
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: person("Evgeni", "Chasnovski", email = "evgeni.chasnovski@gmail.com",
     role = c("aut", "cre"))
 Description: Text analysis of works of Jeff Leek, Roger D. Peng and Hadley
