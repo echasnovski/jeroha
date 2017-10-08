@@ -2,6 +2,7 @@
 
 export(file_base_name)
 export(filter_good_words)
+export(remove_md_emphasis)
 export(tidy_pdf)
 export(tidy_rmd)
 importFrom(dplyr,"%>%")

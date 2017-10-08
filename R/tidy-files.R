@@ -87,6 +87,22 @@ file_base_name <- function(file) {
     str_replace_all("\\..*?$", "")
 }
 
+#' Remove markdown emphasis
+#'
+#' Function to remove emphasis from scraped markdown.
+#'
+#' @param x Character vector.
+#'
+#' @examples
+#' remove_md_emphasis(c("_a", "__a", "*a", "_*a",
+#'                      "a_", "a__", "a*", "a*_",
+#'                      "_a_", "__a__", "*a*", "**a**"))
+#'
+#' @export
+remove_md_emphasis <- function(x) {
+  str_replace_all(x, "^[_*]+|[_*]+$", "")
+}
+
 #' Filter good words
 #'
 #' Remove from word table (data frame with 'word' column) rows with words 'bad'

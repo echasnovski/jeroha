@@ -30,6 +30,8 @@ r4ds <- file.path("data-raw", "r4ds", r4ds_pages[["file"]]) %>%
   lapply(tidy_rmd) %>%
   bind_rows() %>%
   rename(pageName = name) %>%
+  # Remove md emphasis before filtering words with only alphabetic characters.
+  mutate(word = remove_md_emphasis(word)) %>%
   filter_good_words() %>%
   mutate(
     id = seq_len(n()),

@@ -48,6 +48,16 @@ test_that("file_base_name works", {
 })
 
 
+# remove_md_emphasisэ -----------------------------------------------------
+test_that("remove_md_emphasis workd", {
+  output <- remove_md_emphasis(c("_a", "__a", "*a", "_*a",
+                                 "a_", "a__", "a*", "a*_",
+                                 "_a_", "__a__", "*a*", "**a**"))
+  output_ref <- rep("a", 12)
+
+  expect_identical(output, output_ref)
+})
+
 # filter_good_words -------------------------------------------------------
 test_that("filter_good_words works", {
   input <- input_word_tbl
