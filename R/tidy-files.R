@@ -84,7 +84,7 @@ tidy_rmd <- function(file, name = file_base_name(file)) {
 file_base_name <- function(file) {
   file %>%
     basename() %>%
-    str_replace_all("\\....$", "")
+    str_replace_all("\\..*?$", "")
 }
 
 #' Filter good words

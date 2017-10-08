@@ -38,10 +38,11 @@ test_that("file_base_name works", {
     "some/folder/path/end-file.rmd",
     "some/folder/path/end-file.Rmd",
     "some/folder/path/end-file.txt",
-    "end-file", "end-file.", ".end-file"
+    "end-file", "end-file.", "end-file.gz",
+    ".end-file"
   )
   output <- file_base_name(input)
-  output_ref <- c(rep("end-file", 4), "end-file.", ".end-file")
+  output_ref <- c(rep("end-file", 6), "")
 
   expect_identical(output, output_ref)
 })
