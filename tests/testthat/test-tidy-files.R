@@ -50,21 +50,9 @@ test_that("file_base_name works", {
 # filter_good_words -------------------------------------------------------
 test_that("filter_good_words works", {
   input <- input_word_tbl
-  output <- filter_good_words(input, use_punct = FALSE)
+  output <- filter_good_words(input)
   output_ref <- input[4:5, ]
-  output_punct <- filter_good_words(input, use_punct = TRUE)
-  output_ref_punct <- input[c(4:5, 13:16), ]
-
-  expect_identical(output, output_ref)
-  expect_identical(output_punct, output_ref_punct)
-})
-
-
-# extract_alpha -----------------------------------------------------------
-test_that("extract_alpha works", {
-  input <- input_word_tbl$word[6:16]
-  output <- extract_alpha(input)
-  output_ref <- rep("word", 11)
 
   expect_identical(output, output_ref)
 })
+
